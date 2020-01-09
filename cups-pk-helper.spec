@@ -1,15 +1,15 @@
 Name:           cups-pk-helper
-Version:        0.2.4
-Release:        5%{?dist}
+Version:        0.2.6
+Release:        2%{?dist}
 Summary:        A helper that makes system-config-printer use PolicyKit
 
 Group:          System Environment/Base
 License:        GPLv2+
 URL:            http://www.vuntz.net/download/cups-pk-helper/
-Source0:        http://cgit.freedesktop.org/cups-pk-helper/snapshot/cups-pk-helper-%{version}.tar.bz2
+Source0:        http://cgit.freedesktop.org/cups-pk-helper/snapshot/cups-pk-helper-%{version}.tar.xz
 
 Patch0:         polkit_result.patch
-Patch1:         0001-Be-stricter-when-validating-printer-names.patch
+Patch1:         cups-pk-helper-0.2.6-ipp-jstate.patch
 
 BuildRequires:  libtool >= 1.4.3
 BuildRequires:  cups-devel >= 1.2
@@ -36,15 +36,11 @@ interfaces available under control of PolicyKit.
 
 %prep
 %setup -q
-
 %patch0 -p1 -b .polkit-result
-%patch1 -p1 -R -b .strict-names
+%patch1 -p1 -b .ipp-jstate
 
 
 %build
-# grr, tarball without configure
-./autogen.sh
-
 %configure
 make %{?_smp_mflags}
 
@@ -66,6 +62,14 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Feb 10 2017 Marek Kasik <mkasik@redhat.com> - 0.2.6-2
+- Define IPP jstate constants if they are not defined
+- Related: #1384967
+
+* Fri Feb 10 2017 Marek Kasik <mkasik@redhat.com> - 0.2.6-1
+- Update to 0.2.6
+- Resolves: #1384967
+
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.2.4-5
 - Mass rebuild 2014-01-24
 

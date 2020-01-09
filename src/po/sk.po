@@ -3,21 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-#   <helix84@centrum.sk>, 2011.
-# Matej Moško <matej.mosko@gmail.com>, 2011.
+# helix84 <helix84@centrum.sk>, 2015
+# helix84 <helix84@centrum.sk>, 2011
+# Matej Moško <matej.mosko@gmail.com>, 2011
 msgid ""
 msgstr ""
 "Project-Id-Version: cups-pk-helper\n"
-"Report-Msgid-Bugs-To: https://bugs.freedesktop.org/enter_bug.cgi?product=cups-pk-helper\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-03-22 20:04+0100\n"
-"PO-Revision-Date: 2012-02-14 08:27+0000\n"
+"PO-Revision-Date: 2015-02-12 15:04+0000\n"
 "Last-Translator: helix84 <helix84@centrum.sk>\n"
-"Language-Team: Slovak (http://www.transifex.net/projects/p/freedesktop/language/sk/)\n"
+"Language-Team: Slovak (http://www.transifex.com/freedesktop/cups-pk-helper/language/sk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sk\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../src/org.opensuse.cupspkhelper.mechanism.policy.in.h:1
 msgid "Add/Remove/Edit a class"
@@ -88,11 +89,11 @@ msgstr "Na získanie/nastavenie predvolieb servera potrebujete prístupové prá
 #: ../src/org.opensuse.cupspkhelper.mechanism.policy.in.h:17
 msgid ""
 "Privileges are required to restart/cancel/edit a job owned by another user."
-msgstr "Na zastavenie/reštart/úpravu tlače iného používateľa potrebujete prístupové práva."
+msgstr "Na zastavenie/reštart/úpravu tlačovej úlohy iného používateľa potrebujete prístupové práva."
 
 #: ../src/org.opensuse.cupspkhelper.mechanism.policy.in.h:18
 msgid "Privileges are required to restart/cancel/edit a job."
-msgstr "Na zastavenie/reštart/úpravu tlače potrebujete prístupové práva."
+msgstr "Na zastavenie/reštart/úpravu tlačovej úlohy potrebujete prístupové práva."
 
 #: ../src/org.opensuse.cupspkhelper.mechanism.policy.in.h:19
 msgid ""
@@ -101,11 +102,11 @@ msgstr "Na nastavenie tlačiarne ako štandardnej potrebujete prístupové práv
 
 #: ../src/org.opensuse.cupspkhelper.mechanism.policy.in.h:20
 msgid "Restart/Cancel/Edit a job"
-msgstr "Reštartovať/zastaviť/upraviť tlač"
+msgstr "Reštartovať/zastaviť/upraviť tlačovú úlohu"
 
 #: ../src/org.opensuse.cupspkhelper.mechanism.policy.in.h:21
 msgid "Restart/Cancel/Edit a job owned by another user"
-msgstr "Reštartovať/zastaviť/upraviť tlač iného používateľa"
+msgstr "Reštartovať/zastaviť/upraviť tlačovú úlohu iného používateľa"
 
 #: ../src/org.opensuse.cupspkhelper.mechanism.policy.in.h:22
 msgid "Set a printer as default printer"

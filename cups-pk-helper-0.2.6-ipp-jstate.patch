@@ -1,0 +1,20 @@
+--- cups-pk-helper-0.2.6/src/cups.c
++++ cups-pk-helper-0.2.6/src/cups.c
+@@ -87,6 +87,17 @@ ippSetString(ipp_t            *ipp,
+ }
+ #endif
+ 
++/* The ipp_jstate_t enum was added in CUPS 1.7 */
++#if ((CUPS_VERSION_MAJOR < 1) || (CUPS_VERSION_MAJOR == 1 && CUPS_VERSION_MINOR < 7))
++#define IPP_JSTATE_PENDING IPP_JOB_PENDING
++#define IPP_JSTATE_HELD IPP_JOB_HELD
++#define IPP_JSTATE_PROCESSING IPP_JOB_PROCESSING
++#define IPP_JSTATE_STOPPED IPP_JOB_STOPPED
++#define IPP_JSTATE_CANCELED IPP_JOB_CANCELED
++#define IPP_JSTATE_ABORTED IPP_JOB_ABORTED
++#define IPP_JSTATE_COMPLETED IPP_JOB_COMPLETED
++#endif
++
+ /* This is 0.1 second */
+ #define RECONNECT_DELAY        100000
+ /* We try to reconnect during 3 seconds. It's still a fairly long time even for

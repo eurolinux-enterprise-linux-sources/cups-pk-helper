@@ -1,6 +1,6 @@
 Name:           cups-pk-helper
 Version:        0.0.4
-Release:        12%{?dist}
+Release:        13%{?dist}
 Summary:        A helper that makes system-config-printer use PolicyKit
 
 Group:          System Environment/Base
@@ -17,6 +17,7 @@ Patch5:         allow_authentication.patch
 Patch6:         cups-pk-helper-add-printer-ppd-optional.patch
 Patch7:         cups-pk-helper-job-status.patch
 Patch8:         cups-pk-helper-invalid-job.patch
+Patch9:         cups-pk-helper-translations.patch
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -55,6 +56,7 @@ interfaces available under control of PolicyKit.
 %patch6 -p1 -b .ppd
 %patch7 -p1 -b .job-status
 %patch8 -p1 -b .invalid-job
+%patch9 -p1 -b .translations
 
 %build
 # Patch0 modifies configure.ac
@@ -69,11 +71,14 @@ rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
 
+%find_lang %{name}
+
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root,-)
 %{_libexecdir}/cups-pk-helper-mechanism
 %config(noreplace) %{_sysconfdir}/dbus-1/system.d/org.opensuse.CupsPkHelper.Mechanism.conf
@@ -84,6 +89,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Jan 12 2016 Marek Kasik <mkasik@redhat.com> - 0.0.4-13
+- Add translations of policies
+- Resolves: #814562
+
 * Wed Feb 24 2010 Marek Kasik <mkasik@redhat.com> - 0.0.4-12
 - Avoid timeout on job-related methods for invalid jobs
 - Make sure to return an error via dbus in case of failure

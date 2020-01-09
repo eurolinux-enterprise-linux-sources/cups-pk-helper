@@ -1,6 +1,6 @@
 Name:           cups-pk-helper
 Version:        0.2.4
-Release:        2%{?dist}
+Release:        5%{?dist}
 Summary:        A helper that makes system-config-printer use PolicyKit
 
 Group:          System Environment/Base
@@ -18,7 +18,6 @@ BuildRequires:  glib2-devel >= 2.29.8
 BuildRequires:  gtk2-devel >= 2.12.0
 BuildRequires:  dbus-glib-devel >= 0.74
 BuildRequires:  polkit-devel >= 0.97
-BuildRequires:  polkit-gnome >= 0.97
 BuildRequires:  intltool >= 0.40.6
 BuildRequires:  gettext-devel >= 0.17
 BuildRequires:  gnome-common >= 2.26
@@ -67,6 +66,16 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.2.4-5
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.2.4-4
+- Mass rebuild 2013-12-27
+
+* Thu Dec  5 2013 Marek Kasik <mkasik@redhat.com> - 0.2.4-3
+- Remove build requirement of polkit-gnome
+- Resolves: #1037826
+
 * Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
